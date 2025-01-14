@@ -354,3 +354,19 @@ Processing by Rails::WelcomeController#index as HTML
 Completed 200 OK in 41ms (Views: 1.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 6.5ms)
 
 
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4818850956138406635) /*application='Dfinance'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Dfinance'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (4.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='Dfinance'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Create (3.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2025-01-14 09:51:40.101331', '2025-01-14 09:51:40.101332') RETURNING "key" /*application='Dfinance'*/[0m
+Migrating to CreateUsers (20250114093714)
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT pg_advisory_unlock(4818850956138406635) /*application='Dfinance'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4818850956138406635) /*application='Dfinance'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Dfinance'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='Dfinance'*/[0m
+Migrating to CreateUsers (20250114093714)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN /*application='Dfinance'*/[0m
+  [1m[35m (14.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "first_name" character varying(20) NOT NULL, "last_name" character varying(20) NOT NULL, "email" character varying(50) NOT NULL) /*application='Dfinance'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20250114093714') RETURNING "version" /*application='Dfinance'*/[0m
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT /*application='Dfinance'*/[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(4818850956138406635) /*application='Dfinance'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Dfinance'*/[0m
