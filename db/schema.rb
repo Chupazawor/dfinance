@@ -20,5 +20,6 @@ ActiveRecord::Schema[8.0].define(version: 2025_01_14_093714) do
     t.string "first_name", limit: 20, null: false
     t.string "last_name", limit: 20, null: false
     t.string "email", limit: 50, null: false
+    t.index ["email"], name: "index_users_on_email", unique: true
   end
 end
