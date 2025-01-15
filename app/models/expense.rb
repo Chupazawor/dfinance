@@ -1,5 +1,5 @@
 class Expense < ApplicationRecord
-  validates :date, format: { with: MM/DD/YYYY } # по аналогии с email делал.
+  #validates_format_of :date, with: /\d{2}\/\d{2}\/\d{4}/
 
   belongs_to :user
 end

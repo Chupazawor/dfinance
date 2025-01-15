@@ -17,9 +17,12 @@ ActiveRecord::Schema[8.0].define(version: 2025_01_15_102923) do
   create_table "expenses", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "sum", null: false
+    t.integer "amount", null: false
     t.date "date", null: false
     t.string "category", limit: 20, null: false
+    t.string "currency", default: "BYN"
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_expenses_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
