@@ -1,0 +1,18 @@
+<%= form_for @expense, as: :expense do |form| %>
+  <%= form.label 'Amount' %>
+  <%= form.text_field :amount %>
+
+  <br>
+
+  <%= form.label 'Date of expense' %>
+  <%= form.date_field :date %>
+
+  <br>
+
+  <%= form.label 'Category' %>
+  <%= form.text_field :category %>
+
+  <br>
+
+  <%= form.submit 'Create' %>
+<% end %>
