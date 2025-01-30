@@ -2,7 +2,7 @@ class ExpensesController < ApplicationController
   before_action :find_expense, only: %i[edit update delete]
 
   def index
-    @expenses = Expense.all
+    @expenses = Expense.all.reorder(:date)
   end
 
   def new
@@ -10,13 +10,13 @@ class ExpensesController < ApplicationController
   end
 
   def create
-    if @expense = Expense.create(**permitted_attributes, user_id: User.last.id)
+    if @expense = Expense.create(**permitted_attributes, category_id: params[:expense][:category_id], user_id: User.last.id)
       redirect_to expenses_path
     else
       redirect_to expenses_path, error: 'Error while creating Expense'
     end
   end
-  
+
   def edit; end
 
   def update
@@ -42,6 +42,6 @@ class ExpensesController < ApplicationController
   end
 
   def permitted_attributes
-    params.require(:expense).permit(:amount, :date, :category)
+    params.require(:expense).permit(:amount, :date, :category_id)
   end
 end

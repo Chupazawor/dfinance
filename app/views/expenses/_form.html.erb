@@ -5,12 +5,12 @@
   <br>
 
   <%= form.label 'Date of expense' %>
-  <%= form.date_field :date %>
+  <%= form.date_field :date, value: @expense.date || Date.today, max: Date.tomorrow %>
 
   <br>
 
   <%= form.label 'Category' %>
-  <%= form.text_field :category %>
+  <%= form.select :category_id, Category.all.collect { |cat| [cat.name, cat.id] }, { include_blank: false } %>
 
   <br>
 
