@@ -1,0 +1,6 @@
+<%= form_for @category, as: :category do |form| %>
+  <%= form.label 'New Category(if you need)' %>
+  <%= form.text_field :name %>
+
+  <%= form.submit 'Create' %>
+<% end %>
