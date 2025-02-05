@@ -1,3 +1,21 @@
-<p>New category page</p>
-<%= Category.all.pluck(:name) %>
+<h1>New category page</h1>
+
+<% if @categories.present? %>
+  <table>
+    <tr>
+      <td>Категории:</td>
+      <td>Удалить:</td>
+    </tr>
+  <% @categories.each do |category| %>
+    <tr>
+      <td><%= category.name %></td>
+      <% unless category.general %>
+        <td><%= link_to 'X', category_path(category.id), data: { turbo_method: :delete } %></td>
+        <td><%= link_to 'Edit', edit_category_path(category.id) %></td>
+      <% end %>
+    </tr>
+    <% end %>
+  </table>
+<% end %>
+
 <%= render 'form' %>

@@ -17,8 +17,8 @@
         <td><%= expense.category&.name || '(без категории)' %></td>
         <td><%= expense.currency %></td>
         <td><%= expense.date.to_formatted_s(:short) %></td>
-        <td><%= link_to 'Edit expense', edit_expense_path(expense.id) %></td>
-        <td><%= link_to 'Remove expense', expense_path(expense.id), data: { turbo_method: :delete } %></td>
+        <td><%= link_to 'Edit', edit_expense_path(expense.id) %></td>
+        <td><%= link_to 'Remove', expense_path(expense.id), data: { turbo_method: :delete } %></td>
       </tr>
     <% end %>
   </table>
