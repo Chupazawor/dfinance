@@ -7,7 +7,7 @@ namespace :categories do
     categories = YAML.load_file('lib/tasks/default_categories_ru.yml').fetch('default_categories')
 
     categories.each do |category_name|
-      Category.create(name: category_name, general: true)
+      Category.find_or_create_by(name: category_name, general: true)
     end
   end
 end
