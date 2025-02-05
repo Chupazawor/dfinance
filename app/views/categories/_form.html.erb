@@ -1,0 +1,6 @@
+<%= form_for @category, as: :category do |form| %>
+  <%= form.label 'Имя новой категории: ' %>
+  <%= form.text_field :name %>
+
+  <%= form.submit 'Создать!' %>
+<% end %>

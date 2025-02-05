@@ -1,0 +1,18 @@
+<%= form_for @expense, as: :expense do |form| %>
+  <%= form.label 'Amount' %>
+  <%= form.text_field :amount %>
+
+  <br>
+
+  <%= form.label 'Date of expense' %>
+  <%= form.date_field :date, value: @expense.date || Date.today, max: Date.tomorrow %>
+
+  <br>
+
+  <%= form.label 'Category' %>
+  <%= form.select :category_id, Category.all.collect { |cat| [cat.name, cat.id] }, { include_blank: false } %>
+
+  <br>
+
+  <%= form.submit 'Create' %>
+<% end %>
