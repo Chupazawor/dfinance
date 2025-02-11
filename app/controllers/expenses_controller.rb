@@ -42,6 +42,6 @@ class ExpensesController < ApplicationController
   end
 
   def permitted_attributes
-    params.require(:expense).permit(:amount, :date, :category_id)
+    params.require(:expense).permit(:amount, :date, :category_id, :description)
   end
 end
