@@ -1,7 +1,7 @@
 class CategoriesController < ApplicationController
-  before_action :find_category, only: %i[delete update]
+  before_action :find_category, only: %i[delete update edit]
 
-  def index 
+  def index
     @categories = Category.all
   end
 

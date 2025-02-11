@@ -8,6 +8,7 @@
       <td>Category</td>
       <td>Currency</td>
       <td>Date</td>
+      <td>Comment</td>
       <td></td>
       <td></td>
     </tr>
@@ -17,6 +18,7 @@
         <td><%= expense.category&.name || '(без категории)' %></td>
         <td><%= expense.currency %></td>
         <td><%= expense.date.to_formatted_s(:short) %></td>
+        <td><%= expense.description&.truncate(30) %></td>
         <td><%= link_to 'Edit', edit_expense_path(expense.id) %></td>
         <td><%= link_to 'Remove', expense_path(expense.id), data: { turbo_method: :delete } %></td>
       </tr>
