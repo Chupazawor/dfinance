@@ -48,7 +48,12 @@ group :development, :test do
   gem "brakeman", require: false
 
   # Omakase Ruby styling [https://github.com/rails/rubocop-rails-omakase/]
-  gem "rubocop-rails-omakase", require: false
+  # gem "rubocop-rails-omakase", require: false
+  gem 'rubocop', require: false
+  gem 'rubocop-performance'
+  gem 'rubocop-rails'
+  # gem 'rubocop-rspec', '~> 2.0'
+
 end
 
 group :development do
@@ -60,3 +65,11 @@ gem "devise"
 gem "currencies"
 gem "pry"
 gem "slim"
+
+# group :test do
+#  gem 'rspec', '~> 3.10'
+
+#  gem 'rubocop', require: false
+#  gem 'rubocop-performance', '~> 1.0'
+#  gem 'rubocop-rspec', '~> 2.0'
+# end
