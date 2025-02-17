@@ -11,24 +11,5 @@ AllCops:
     - db/cache_schema.rb
     - db/cable_schema.rb
 
-# Style/StringLiterals:
 Style/Documentation:
   Enabled: false
-
-
-# Metrics/BlockLength:
-#   Exclude:
-#     - spec/**/*.rb
-
-# Layout/LineLength:
-#   Exclude:
-#     - spec/**/*.rb
-
-# Style/Documentation:
-#   Enabled: false
-
-# RSpec/MultipleExpectations:
-#   Max: 10
-
-# RSpec/ExampleLength:
-#   Max: 20

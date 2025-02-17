@@ -54,6 +54,7 @@ group :development, :test do
   gem 'rubocop', require: false
   gem 'rubocop-performance'
   gem 'rubocop-rails'
+  gem 'slim_lint', require: false
   # gem 'rubocop-rspec', '~> 2.0'
 end
 
