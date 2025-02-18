@@ -5,7 +5,7 @@ class CreateCategories < ActiveRecord::Migration[8.0]
     create_table :categories do |t|
       t.timestamps
       t.string :name, null: false
-      t.boolean :general, default: false
+      t.boolean :general, default: false # rubocop:disable Rails/ThreeStateBooleanColumn
       t.references :user
     end
   end
