@@ -1,11 +1,15 @@
 require:
   - rubocop-performance
   - rubocop-rails
-#   - rubocop-rspec
+  - rubocop-rspec
+  - rubocop-rspec_rails
+  - rubocop-factory_bot
 
 AllCops:
   NewCops: enable
   Exclude:
+    - bin/bundle
+    - config/initializers/devise.rb
     - db/schema.rb
     - db/queue_schema.rb
     - db/cache_schema.rb
@@ -13,3 +17,7 @@ AllCops:
 
 Style/Documentation:
   Enabled: false
+
+Layout/LineLength:
+  Exclude:
+    - spec/**/*
