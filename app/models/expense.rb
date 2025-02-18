@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 class Expense < ApplicationRecord
   belongs_to :user
   belongs_to :category
 
-  validates_presence_of :amount, :date, :category
+  validates :amount, :date, presence: true
 end

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class AddCategoryIdToExpense < ActiveRecord::Migration[8.0]
   def up
     remove_column :expenses, :category

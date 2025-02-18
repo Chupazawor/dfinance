@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CategoriesController < ApplicationController
   before_action :find_category, only: %i[delete update edit]
 
@@ -10,15 +12,15 @@ class CategoriesController < ApplicationController
     @categories = Category.for(User.last.id)
   end
 
+  def edit; end
+
   def create
-    if @category = Category.create(**permitted_attributes, user_id: User.last.id, general: false)
+    if (@category = Category.create(**permitted_attributes, user_id: User.last.id, general: false))
       redirect_to expenses_path
     else
       redirect_to new_category_path, error: 'Error while creating Category'
     end
   end
-
-  def edit; end
 
   def update
     if @category.update(permitted_attributes)
@@ -39,7 +41,7 @@ class CategoriesController < ApplicationController
   private
 
   def permitted_attributes
-    params.require(:category).permit(:name)
+    params.expect(category: [:name])
   end
 
   def find_category
