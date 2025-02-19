@@ -1,35 +1,29 @@
 # README
 DFinance - An app for easy management of your finances.
 
-Prerequisites
-The setups steps expect following tools installed on the system.
-  * Github
-  * Ruby 3.3.5
-  * Rails 8.0.1
-  * Postgresql 14.13 (Homebrew)
+## Prerequisites
+The setups steps expect following tools installed on the system:
+* Ruby 3.3.5
+* Rails 8.0.1
+* Postgresql 14.13
 
-Installation
-1. Check out the repository.
-    git@github.com:Chupazawor/dfinance.git
-    Run bundle.
+## Installation
+1. Check out the repository
+`git clone git@github.com:Chupazawor/dfinance.git`
+2. Run
+`$ bundle install`
+3. Create and setup the database:
+`rails db:setup`
+4. Create default categories in database:
+`rails categories:default_category`
 
-2. Create and setup the database.
-    Run the following commands to setup the database.
-    bundle exec rake db:setup
+## Running
+Start the Rails server `$ rails s`
+Visit: http://127.0.0.1:3000/
 
-3. Create default categories in database.
-    Run the following command to create default categories.
-    bundle exec rake categories:default_category
+## Testing
+We're using RSpec: run `$ rspec`
 
-Running
-4. Start the Rails server.
-    bundle exec rails s
-    Link in browser: http://127.0.0.1:3000/expenses
-
-Tests
-5. Test suite: Rspec
-    How to run the test suite: bundle exec rspec
-
-Linters
-6. Linter: Rubopoc
-    How to run rubocop: bundle exec rubocop
+## Linters
+Rubocop: `$ rubocop`
+Reek: `$ reek`
