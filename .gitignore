@@ -37,4 +37,4 @@
 /config/master.key
 
 .byebug_history
-echo coverage
+/coverage
