@@ -37,8 +37,8 @@ group :development, :test do
   gem 'rubocop-rails'
   gem 'rubocop-rails-omakase', require: false
   gem 'rubocop-rspec_rails'
-  gem 'slim_lint', require: false
   gem 'simplecov', require: false
+  gem 'slim_lint', require: false
 end
 
 group :development do
