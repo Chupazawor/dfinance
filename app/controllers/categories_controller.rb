@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class CategoriesController < ApplicationController
-  before_action :find_category, only: %i[delete update edit]
+  before_action :find_category, only: %i[update edit destroy]
 
   def index
     @categories = Category.all
@@ -30,7 +30,7 @@ class CategoriesController < ApplicationController
     end
   end
 
-  def delete
+  def destroy
     if @category.destroy
       redirect_to category_path
     else

@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class ExpensesController < ApplicationController
-  before_action :find_expense, only: %i[edit update delete]
+  before_action :find_expense, only: %i[edit update destroy]
 
   def index
     @expenses = Expense.reorder(:date)
@@ -30,7 +30,7 @@ class ExpensesController < ApplicationController
     end
   end
 
-  def delete
+  def destroy
     if @expense.destroy
       redirect_to expenses_path
     else
